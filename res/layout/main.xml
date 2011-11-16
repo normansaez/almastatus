@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="fill_parent" android:layout_height="fill_parent">
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Check one of these STE's"
+        android:layout_marginTop="5mm"
+        android:layout_marginBottom="5mm"
+        />
+    <Button
+        android:id="@+id/aos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/label"
+        android:layout_marginLeft="10dip"
+        android:layout_centerInParent = "true"
+        android:width="20mm"
+        android:text="AOS" />
+    <Button
+        android:id="@+id/tfint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/aos"
+        android:layout_centerInParent = "true"
+        android:layout_marginLeft="10dip"
+        android:width="20mm"
+        android:text="TFINT" />
+        
+        <Button
+        android:id="@+id/tfsd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tfint"
+        android:layout_marginLeft="10dip"
+        android:layout_centerInParent = "true"
+        android:width="20mm"
+        android:text="TFSD" />
+        
+        <Button
+        android:id="@+id/tfohg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tfsd"
+        android:layout_marginLeft="10dip"
+        android:layout_centerInParent = "true"
+        android:width="20mm"
+        android:text="TFOHG" />
+        
+        <Button
+        android:id="@+id/tfeng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tfohg"
+        android:layout_marginLeft="10dip"
+        android:layout_centerInParent = "true"
+        android:width="20mm"
+        android:text="TFENG" />
+</RelativeLayout>
+</ScrollView>

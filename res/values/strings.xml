@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ste">ste status</string>
+    <string name="app_name">ste status</string>
+    <string name="acs">acs</string>
+    <string name="almasw">almasw</string>
+    <string name="pads">pads</string>
+    <string name="num">num</string>
+</resources>
