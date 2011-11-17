@@ -139,6 +139,11 @@ public class AlmastatusActivity extends Activity {
 
 					try {
 						getFromWS("TFOHG");
+						Intent myIntent = new Intent(AlmastatusActivity.this,
+								StestatusActivity.class);
+						Bundle bundle = fillBundle();
+						myIntent.putExtras(bundle);
+						AlmastatusActivity.this.startActivity(myIntent);
 					} catch (Exception e) {
 						Context context = getBaseContext();
 						e.printStackTrace();
@@ -146,11 +151,7 @@ public class AlmastatusActivity extends Activity {
 								"Couldn't connect to server", 20);
 						toast.show();
 					}
-					Intent myIntent = new Intent(AlmastatusActivity.this,
-							StestatusActivity.class);
-					Bundle bundle = fillBundle();
-					myIntent.putExtras(bundle);
-					AlmastatusActivity.this.startActivity(myIntent);
+
 				} else {
 					Context context = getBaseContext();
 					Toast toast = Toast.makeText(context,
