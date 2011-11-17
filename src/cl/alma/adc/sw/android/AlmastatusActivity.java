@@ -35,7 +35,7 @@ public class AlmastatusActivity extends Activity {
 	public String acs = "";
 	public String almasw = "";
 	public HashMap<String, String> antennaPads = new HashMap<String, String>();
-	
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -48,14 +48,9 @@ public class AlmastatusActivity extends Activity {
 				Context ctx = getBaseContext();
 				if (isNetworkAvailable(ctx)) {
 					getFromWS("AOS");
-					steName = "AOS";
 					Intent myIntent = new Intent(AlmastatusActivity.this,
 							StestatusActivity.class);
-					Bundle bundle = new Bundle();
-					bundle.putString("steName", steName);
-					bundle.putString("acs", acs);
-					bundle.putString("almasw", almasw);
-					bundle.putSerializable("antennapads", antennaPads);
+					Bundle bundle = fillBundle();
 					myIntent.putExtras(bundle);
 					AlmastatusActivity.this.startActivity(myIntent);
 				} else {
@@ -75,14 +70,9 @@ public class AlmastatusActivity extends Activity {
 				if (isNetworkAvailable(ctx)) {
 
 					getFromWS("TFINT");
-					steName = "TFINT";
 					Intent myIntent = new Intent(AlmastatusActivity.this,
 							StestatusActivity.class);
-					Bundle bundle = new Bundle();
-					bundle.putString("steName", steName);
-					bundle.putString("acs", acs);
-					bundle.putString("almasw", almasw);
-					bundle.putSerializable("antennapads", antennaPads);
+					Bundle bundle = fillBundle();
 					myIntent.putExtras(bundle);
 					AlmastatusActivity.this.startActivity(myIntent);
 				} else {
@@ -103,14 +93,9 @@ public class AlmastatusActivity extends Activity {
 				if (isNetworkAvailable(ctx)) {
 
 					getFromWS("TFSD");
-					steName = "TFSD";
 					Intent myIntent = new Intent(AlmastatusActivity.this,
 							StestatusActivity.class);
-					Bundle bundle = new Bundle();
-					bundle.putString("steName", steName);
-					bundle.putString("acs", acs);
-					bundle.putString("almasw", almasw);
-					bundle.putSerializable("antennapads", antennaPads);
+					Bundle bundle = fillBundle();
 					myIntent.putExtras(bundle);
 					AlmastatusActivity.this.startActivity(myIntent);
 				} else {
@@ -131,14 +116,9 @@ public class AlmastatusActivity extends Activity {
 				if (isNetworkAvailable(ctx)) {
 
 					getFromWS("TFOHG");
-					steName = "TFOHG";
 					Intent myIntent = new Intent(AlmastatusActivity.this,
 							StestatusActivity.class);
-					Bundle bundle = new Bundle();
-					bundle.putString("steName", steName);
-					bundle.putString("acs", acs);
-					bundle.putString("almasw", almasw);
-					bundle.putSerializable("antennapads", antennaPads);
+					Bundle bundle = fillBundle();
 					myIntent.putExtras(bundle);
 					AlmastatusActivity.this.startActivity(myIntent);
 				} else {
@@ -159,14 +139,9 @@ public class AlmastatusActivity extends Activity {
 				if (isNetworkAvailable(ctx)) {
 
 					getFromWS("TFENG");
-					steName = "TFENG";
 					Intent myIntent = new Intent(AlmastatusActivity.this,
 							StestatusActivity.class);
-					Bundle bundle = new Bundle();
-					bundle.putString("steName", steName);
-					bundle.putString("acs", acs);
-					bundle.putString("almasw", almasw);
-					bundle.putSerializable("antennapads", antennaPads);
+					Bundle bundle = fillBundle();
 					myIntent.putExtras(bundle);
 					AlmastatusActivity.this.startActivity(myIntent);
 				} else {
@@ -179,6 +154,15 @@ public class AlmastatusActivity extends Activity {
 			}
 		});
 
+	}
+
+	public Bundle fillBundle() {
+		Bundle bundle = new Bundle();
+		bundle.putString("steName", steName);
+		bundle.putString("acs", acs);
+		bundle.putString("almasw", almasw);
+		bundle.putSerializable("antennapads", antennaPads);
+		return bundle;
 	}
 
 	public boolean isNetworkAvailable(Context ctx) {
@@ -248,7 +232,7 @@ public class AlmastatusActivity extends Activity {
 		Element steElement = (Element) ste;
 		String acs = steElement.getAttribute("acs");
 		String almasw = steElement.getAttribute("alma");
-
+		this.steName = stename;
 		this.almasw = almasw;
 		this.acs = acs;
 		antennaPads.clear();
