@@ -9,7 +9,6 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.ksoap2.SoapEnvelope;
-import org.ksoap2.SoapFault;
 import org.ksoap2.serialization.SoapObject;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
@@ -49,6 +48,10 @@ public class AlmastatusActivity extends Activity {
 				if (isNetworkAvailable(ctx)) {
 					try {
 						getFromWS("AOS");
+						Intent myIntent = new Intent(AlmastatusActivity.this, StestatusActivity.class);
+						Bundle bundle = fillBundle();
+						myIntent.putExtras(bundle);
+						AlmastatusActivity.this.startActivity(myIntent);
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -62,11 +65,6 @@ public class AlmastatusActivity extends Activity {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					Intent myIntent = new Intent(AlmastatusActivity.this,
-							StestatusActivity.class);
-					Bundle bundle = fillBundle();
-					myIntent.putExtras(bundle);
-					AlmastatusActivity.this.startActivity(myIntent);
 				} else {
 					Context context = getBaseContext();
 					Toast toast = Toast.makeText(context,
@@ -82,13 +80,27 @@ public class AlmastatusActivity extends Activity {
 			public void onClick(View v) {
 				Context ctx = getBaseContext();
 				if (isNetworkAvailable(ctx)) {
+					try {
+						getFromWS("TFINT");
+						Intent myIntent = new Intent(AlmastatusActivity.this,
+								StestatusActivity.class);
+						Bundle bundle = fillBundle();
+						myIntent.putExtras(bundle);
+						AlmastatusActivity.this.startActivity(myIntent);
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (XmlPullParserException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (ParserConfigurationException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (SAXException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 
-					//getFromWS("TFINT");
-					Intent myIntent = new Intent(AlmastatusActivity.this,
-							StestatusActivity.class);
-					Bundle bundle = fillBundle();
-					myIntent.putExtras(bundle);
-					AlmastatusActivity.this.startActivity(myIntent);
 				} else {
 					Context context = getBaseContext();
 					Toast toast = Toast.makeText(context,
@@ -108,6 +120,11 @@ public class AlmastatusActivity extends Activity {
 
 					try {
 						getFromWS("TFSD");
+						Intent myIntent = new Intent(AlmastatusActivity.this,
+								StestatusActivity.class);
+						Bundle bundle = fillBundle();
+						myIntent.putExtras(bundle);
+						AlmastatusActivity.this.startActivity(myIntent);
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -121,11 +138,6 @@ public class AlmastatusActivity extends Activity {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					Intent myIntent = new Intent(AlmastatusActivity.this,
-							StestatusActivity.class);
-					Bundle bundle = fillBundle();
-					myIntent.putExtras(bundle);
-					AlmastatusActivity.this.startActivity(myIntent);
 				} else {
 					Context context = getBaseContext();
 					Toast toast = Toast.makeText(context,"Couldn't connect to server", 20);
@@ -181,6 +193,11 @@ public class AlmastatusActivity extends Activity {
 
 					try {
 						getFromWS("TFENG");
+						Intent myIntent = new Intent(AlmastatusActivity.this,
+								StestatusActivity.class);
+						Bundle bundle = fillBundle();
+						myIntent.putExtras(bundle);
+						AlmastatusActivity.this.startActivity(myIntent);
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -194,11 +211,6 @@ public class AlmastatusActivity extends Activity {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					Intent myIntent = new Intent(AlmastatusActivity.this,
-							StestatusActivity.class);
-					Bundle bundle = fillBundle();
-					myIntent.putExtras(bundle);
-					AlmastatusActivity.this.startActivity(myIntent);
 				} else {
 					Context context = getBaseContext();
 					Toast toast = Toast.makeText(context,
