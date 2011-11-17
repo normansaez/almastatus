@@ -55,6 +55,7 @@ public class AlmastatusActivity extends Activity {
 						AlmastatusActivity.this.startActivity(myIntent);
 					} catch (Exception e) {
 						Context context = getBaseContext();
+						e.printStackTrace();
 						Toast toast = Toast.makeText(context,
 								"Couldn't connect to server", 20);
 						toast.show();
@@ -83,6 +84,7 @@ public class AlmastatusActivity extends Activity {
 						AlmastatusActivity.this.startActivity(myIntent);
 					} catch (Exception e) {
 						Context context = getBaseContext();
+						e.printStackTrace();
 						Toast toast = Toast.makeText(context,
 								"Couldn't connect to server", 20);
 						toast.show();
@@ -113,6 +115,7 @@ public class AlmastatusActivity extends Activity {
 						AlmastatusActivity.this.startActivity(myIntent);
 					} catch (Exception e) {
 						Context context = getBaseContext();
+						e.printStackTrace();
 						Toast toast = Toast.makeText(context,
 								"Couldn't connect to server", 20);
 						toast.show();
@@ -138,6 +141,7 @@ public class AlmastatusActivity extends Activity {
 						getFromWS("TFOHG");
 					} catch (Exception e) {
 						Context context = getBaseContext();
+						e.printStackTrace();
 						Toast toast = Toast.makeText(context,
 								"Couldn't connect to server", 20);
 						toast.show();
@@ -173,6 +177,7 @@ public class AlmastatusActivity extends Activity {
 						AlmastatusActivity.this.startActivity(myIntent);
 					} catch (Exception e) {
 						Context context = getBaseContext();
+						e.printStackTrace();
 						Toast toast = Toast.makeText(context,
 								"Couldn't connect to server", 20);
 						toast.show();
