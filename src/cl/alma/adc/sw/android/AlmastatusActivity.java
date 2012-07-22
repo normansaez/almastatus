@@ -29,6 +29,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+
+
 public class AlmastatusActivity extends Activity {
 	public String steName = "";
 	public String acs = "";
