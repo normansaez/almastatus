@@ -1,8 +1,6 @@
 package cl.alma.adc.sw.android;
-
 import java.util.HashMap;
 import java.util.Map.Entry;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
