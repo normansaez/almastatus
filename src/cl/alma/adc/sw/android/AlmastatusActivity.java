@@ -262,7 +262,7 @@ public class AlmastatusActivity extends Activity {
 			Node nNode = nList.item(temp);
 			if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 				Element eElement = (Element) nNode;
-				String antennaName = eElement.getTextContent();
+				String antennaName = eElement.getNodeValue();
 				String pad = eElement.getAttribute("pad");
 				antennaPads.put(antennaName.split("-")[0], pad);
 			}

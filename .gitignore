@@ -1,0 +1,10 @@
+
+.classpath
+
+*.class
+
+*.ap_
+
+*.dex
+
+*.cache
